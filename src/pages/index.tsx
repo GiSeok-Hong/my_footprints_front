@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { MAIN_PALETTE } from '../styles/theme';
-import SignInBtn from '../components/buttons/SignInBtn';
+import IndexBtn from '../components/buttons/IndexBtn';
 
 
 // 첫 페이지
@@ -14,21 +14,23 @@ const Index = styled.div`
 
   &>h1 {
     color: ${MAIN_PALETTE.MAIN_WHITE};
-    font-size:6vw;
+    font-size:5vw;
     text-align:center;
     font-family: "Kalam";
+    position:absolute;
+    top:7vw;
+    left:50%;
+    transform:translateX(-50%);
   }
 `
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+
 const IndexPage = () => {
   return (
     <Index>
       <h1>Hello my memories</h1>
-      <div>
-        <h1>asd</h1>
-      </div>
-      <SignInBtn />
+      <IndexBtn btntype="Sign In" />
+      <IndexBtn btntype="Sign Up"/>
     </Index>
   );
 };
