@@ -12,6 +12,11 @@ const Button = styled.button`
   height:50px;
   padding:15px;
   cursor:pointer;
+  position:absolute;
+  left:50%;
+  bottom:10%;
+  transform:translate(-50%,-50%);
+  opacity:0.7;
 
   &:hover {
     background-color: ${MAIN_PALETTE.MAIN_WHITE};

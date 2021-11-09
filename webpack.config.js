@@ -7,7 +7,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: 'development', // mode : devlopment(개발용), production(배포용), none 3가지 모드가 있다
-  entry: './src/index.ts', // entry : 웹팩을 실행할 대상 파일
+  entry: './src/index.tsx', // entry : 웹팩을 실행할 대상 파일
   output: { // output : 웹팩의 결과물에 대한 정보를 입력하는 속성
     path: path.resolve(__dirname, './dist'), // 결과물 경로 //  __dirname : 현재 디렉토리, dist 폴더에 모든 컴파일된 하나의 번들파일을 넣을 예정
     filename: 'bundle.js' // 결과물 파일명
