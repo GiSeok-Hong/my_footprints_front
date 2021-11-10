@@ -10,7 +10,7 @@ const Button = styled.button`
   padding:15px;
   cursor:pointer;
   opacity:0.7;
-  border: none;
+  border: 1px solid ${MAIN_PALETTE.MAIN_BLUE};
   background-color: ${MAIN_PALETTE.MAIN_BLUE};
 
   /* 폰트 관련 */
@@ -21,8 +21,9 @@ const Button = styled.button`
   position:absolute;
   left:50%;
   transform:translate(-50%,-50%);
-  bottom: ${(props) => props.children === "Sign In" ? "120px" : "50px"};
   
+  
+
   &:hover {
     background-color: ${MAIN_PALETTE.MAIN_WHITE};
     color:${MAIN_PALETTE.MAIN_BLUE};
@@ -31,12 +32,13 @@ const Button = styled.button`
 
 type ButtonProps = {
   btntype: string;
+  bottom: string;
 }
 
 
-const IndexBtn = ({ btntype }:ButtonProps) => {
+const IndexBtn = ({ btntype, bottom }: ButtonProps) => {
   return (
-    <Button>{ btntype }</Button>
+    <Button style={{ bottom }}>{ btntype }</Button>
   );
 };
 

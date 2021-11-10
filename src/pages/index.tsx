@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { MAIN_PALETTE } from '../styles/theme';
-import IndexBtn from '../components/buttons/IndexBtn';
-
+import IndexBtn from '../components/index/indexBtn';
+import IndexModal from '../components/index/modal';
 
 // 첫 페이지
 const Index = styled.div`
@@ -29,8 +29,9 @@ const IndexPage = () => {
   return (
     <Index>
       <h1>Hello my memories</h1>
-      <IndexBtn btntype="Sign In" />
-      <IndexBtn btntype="Sign Up"/>
+      <IndexBtn btntype="Sign In" bottom="120px" />
+      <IndexBtn btntype="Sign Up" bottom="50px" />
+      <IndexModal/>
     </Index>
   );
 };
