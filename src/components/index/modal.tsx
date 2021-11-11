@@ -11,8 +11,6 @@ const Modal = styled.div`
   position:relative;
   font-family:'Kalam';
   
-  // display:none;
-
   & > form {
     width:50vw;
     height:90vh;

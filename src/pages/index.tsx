@@ -26,12 +26,14 @@ const Index = styled.div`
 
 
 const IndexPage = () => {
+  const issign = true;
+
   return (
     <Index>
       <h1>Hello my memories</h1>
-      <IndexBtn btntype="Sign In" bottom="120px" />
-      <IndexBtn btntype="Sign Up" bottom="50px" />
-      <IndexModal/>
+      <IndexBtn title="Sign In" bottom="120px" />
+      <IndexBtn title="Sign Up" bottom="50px" />
+      {issign?<IndexModal />:<></>}
     </Index>
   );
 };

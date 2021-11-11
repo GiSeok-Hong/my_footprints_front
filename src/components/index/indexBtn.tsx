@@ -31,14 +31,14 @@ const Button = styled.button`
 `;
 
 type ButtonProps = {
-  btntype: string;
+  title: string;
   bottom: string;
 }
 
 
-const IndexBtn = ({ btntype, bottom }: ButtonProps) => {
+const IndexBtn = ({ title, bottom }: ButtonProps) => {
   return (
-    <Button style={{ bottom }}>{ btntype }</Button>
+    <Button style={{ bottom }}>{ title }</Button>
   );
 };
 
