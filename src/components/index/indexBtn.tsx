@@ -8,10 +8,11 @@ const Button = styled.button`
   height:50px;
   border-radius: 10px; 
   padding:15px;
-  cursor:pointer;
   opacity:0.7;
   border: 1px solid ${MAIN_PALETTE.MAIN_BLUE};
   background-color: ${MAIN_PALETTE.MAIN_BLUE};
+  cursor:pointer;
+  outline:none;
 
   /* 폰트 관련 */
   font-size: 1rem;

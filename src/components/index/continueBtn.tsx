@@ -11,6 +11,7 @@ const Button = styled.button`
   border-radius:10px;
   cursor:pointer;
   font-size:1rem;
+  outline:none;
 
   &:hover {
     background-color: ${MAIN_PALETTE.MAIN_WHITE};

@@ -9,6 +9,7 @@ const Button = styled.button`
   line-height:16px;
   background-color: ${MAIN_PALETTE.MAIN_WHITE};
   border:none;
+  outline:none;
 
   /* 폰트 관련 */
   font-size: 1.5rem;
