@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MAIN_PALETTE } from '../../styles/theme';
 
 const Button = styled.button`
   /* 기본 모양 */
   padding:5px 7px;
   cursor:pointer;
   line-height:16px;
-  background-color: ${MAIN_PALETTE.MAIN_WHITE};
+  background-color: ${props => props.theme.colors.white};
   border:none;
   outline:none;
 

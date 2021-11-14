@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MAIN_PALETTE } from '../styles/theme';
 import IndexBtn from '../components/index/indexBtn';
 import IndexModal from '../components/index/modal';
 // import Header from '../components/common/header';
@@ -14,9 +13,8 @@ const Index = styled.div`
   position:relative;
 
   &>h1 {
-    color: ${MAIN_PALETTE.MAIN_WHITE};
+    color: ${props => props.theme.colors.white};
     font-size:5vw;
-    text-align:center;
     font-family: "Kalam";
     position:absolute;
     top:7vw;
@@ -27,7 +25,7 @@ const Index = styled.div`
 
 
 const IndexPage = () => {
-  const issign = true;
+  const issign = false;
 
   return (
     <Index>

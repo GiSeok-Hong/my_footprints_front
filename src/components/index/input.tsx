@@ -7,7 +7,9 @@ const Input = styled.input`
 
 const IndexInput = () => {
   return (
-    <Input>d</Input>
+    
+      <Input>d</Input>
+    
   );
 }
 

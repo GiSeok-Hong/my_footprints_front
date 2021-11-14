@@ -1,21 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MAIN_PALETTE } from '../../styles/theme';
 
 const Button = styled.button`
   width:20vw;
   height:50px;
-  background-color: ${MAIN_PALETTE.MAIN_BLUE};
-  color:${MAIN_PALETTE.MAIN_WHITE};
-  border:1px solid ${MAIN_PALETTE.MAIN_BLUE};
+  background-color: ${props => props.theme.colors.main};
+  color:${props => props.theme.colors.white};
+  border:1px solid ${props => props.theme.colors.main};
   border-radius:10px;
   cursor:pointer;
   font-size:1rem;
   outline:none;
 
   &:hover {
-    background-color: ${MAIN_PALETTE.MAIN_WHITE};
-    color: ${MAIN_PALETTE.MAIN_BLUE};
+    background-color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.main};
   }
 `
 

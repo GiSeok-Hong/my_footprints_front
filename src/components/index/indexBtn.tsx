@@ -1,22 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MAIN_PALETTE } from '../../styles/theme';
 
 const Button = styled.button`
   /* 기본 모양 */
   width:200px;
   height:50px;
   border-radius: 10px; 
-  padding:15px;
   opacity:0.7;
-  border: 1px solid ${MAIN_PALETTE.MAIN_BLUE};
-  background-color: ${MAIN_PALETTE.MAIN_BLUE};
+  border: 1px solid ${props => props.theme.colors.main};
+  background-color: ${props => props.theme.colors.main};
   cursor:pointer;
   outline:none;
 
   /* 폰트 관련 */
   font-size: 1rem;
-  color: ${MAIN_PALETTE.MAIN_WHITE};
+  color: ${props => props.theme.colors.white};
 
   /* 위치 */
   position:absolute;
@@ -26,8 +24,8 @@ const Button = styled.button`
   
 
   &:hover {
-    background-color: ${MAIN_PALETTE.MAIN_WHITE};
-    color:${MAIN_PALETTE.MAIN_BLUE};
+    background-color: ${props => props.theme.colors.white};
+    color:${props => props.theme.colors.main};
   }
 `;
 

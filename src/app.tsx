@@ -1,5 +1,6 @@
 import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { myTheme } from './styles/theme'
 import IndexPage from './pages/index';
 
 
@@ -13,10 +14,10 @@ const GlobalStyle = createGlobalStyle`
 
 const App = () => {
   return (
-    <>
+    <ThemeProvider theme={ myTheme }>
       <GlobalStyle/>
       <IndexPage />
-    </>
+    </ThemeProvider>
   );
 };
 
