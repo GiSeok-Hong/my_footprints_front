@@ -5,7 +5,7 @@ const Button = styled.button`
   /* 기본 모양 */
   width:200px;
   height:50px;
-  border-radius: 10px; 
+  border-radius: ${props => props.theme.borderRadius}; 
   opacity:0.7;
   border: 1px solid ${props => props.theme.colors.main};
   background-color: ${props => props.theme.colors.main};
