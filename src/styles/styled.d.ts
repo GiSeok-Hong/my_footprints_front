@@ -8,5 +8,17 @@ declare module "styled-components" {
       main: string;
       white: string;
     };
+
+    fontWeight: {
+      Thin: number;
+      ExtraLight: number;
+      Light: number;
+      Normal: number;
+      Medium: number;
+      SemiBold: number;
+      Bold: number;
+      ExtraBold: number;
+      UltraBold: number;
+    }
   }
 }

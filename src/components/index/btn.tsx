@@ -3,10 +3,8 @@ import styled from 'styled-components';
 
 const Button = styled.button`
   /* 기본 모양 */
-  width:200px;
   height:50px;
   border-radius: ${props => props.theme.borderRadius}; 
-  opacity:0.7;
   border: 1px solid ${props => props.theme.colors.main};
   background-color: ${props => props.theme.colors.main};
   cursor:pointer;
@@ -16,17 +14,24 @@ const Button = styled.button`
   font-size: 1rem;
   color: ${props => props.theme.colors.white};
 
-  /* 위치 */
-  position:absolute;
-  left:50%;
-  transform:translate(-50%,-50%);
-  
-  
-
   &:hover {
     background-color: ${props => props.theme.colors.white};
     color:${props => props.theme.colors.main};
   }
+`;
+
+const IndexButton = styled(Button)`
+  width:200px;
+  opacity:0.7;
+  
+  /* 위치 */
+  position:absolute;
+  left:50%;
+  transform:translate(-50%,-50%);
+`;
+
+const ContinueButton = styled(Button)`
+  width:20vw;
 `;
 
 type ButtonProps = {
@@ -37,9 +42,17 @@ type ButtonProps = {
 
 const IndexBtn = ({ title, bottom }: ButtonProps) => {
   return (
-    <Button style={{ bottom }}>{ title }</Button>
+    <IndexButton style={{ bottom }}>{ title }</IndexButton>
   );
 };
 
 
+const ContinueBtn = () => {
+  return (
+    <ContinueButton>Continue</ContinueButton>
+  )
+}
+
+
+export { IndexBtn, ContinueBtn };
 export default IndexBtn;

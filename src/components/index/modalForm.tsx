@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 // import { Link } from 'react-router-dom';
 import CloseBtn from '../common/closeBtn';
-import ContinueBtn from './continueBtn';
+import { ContinueBtn } from './btn';
+import { IndexInput, ChkInput } from './input';
 
 const Modal = styled.div`
   width:100vw;
@@ -11,6 +12,7 @@ const Modal = styled.div`
   position:relative;
   font-family:'Kalam';
   
+  /* Modal > form */
   & > form {
     width:50vw;
     height:90vh;
@@ -24,12 +26,14 @@ const Modal = styled.div`
     align-items:center;
     justify-content:space-around;
 
-    
+
+    /* Modal > form > p*/
     p {
       font-size:1rem;
       color:#666;
     }
 
+    /* Modal > form > span */
     // 나중에 link 로 바꿔줄 부분
     & > span {
       display:block;
@@ -48,8 +52,13 @@ const IndexModal = () => {
       <form>
         <CloseBtn />
         {/* 상태에 따라 제목 수정 */}
-        <h1>Sign In</h1>
+        <h1>Sign Up</h1>
         
+        <IndexInput title="Email" inputType="email"/>
+        <IndexInput title="Password" inputType="password"/>
+        <IndexInput title="Confirm Password" inputType="password"/>
+        <ChkInput title="agree" content="I agree with TERMS & CONDITIONS" />
+
         {/* Sign In 에서만 나와야함 */}
         <span>Forget your password? (Link로 바꿔야함)</span>
         
