@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IndexBtn } from '../components/index/btn';
-import IndexModal from '../components/index/modalForm';
+import IndexBtn from '../components/index/indexBtn';
+import IndexModal from '../components/index/indexForm';
 // import Header from '../components/common/header';
 
 // 첫 페이지
