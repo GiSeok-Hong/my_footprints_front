@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { BaseSyntheticEvent } from 'react';
 import styled from 'styled-components';
 // import { Link } from 'react-router-dom';
 import BlackBg from '../common/blackBg';
@@ -38,11 +38,22 @@ const Form = styled.form`
 
 `
 
-const IndexForm = () => {
+interface IndexFormInterface {
+  testEvent: () => void
+}
+
+
+const IndexForm = ({ testEvent }:IndexFormInterface) => {
+
+  const handleSubmit = (e:BaseSyntheticEvent) => {
+    e.preventDefault();
+    console.log('onSubmit = preventDefault ');
+  }
+
   return (
     <BlackBg>
-      <Form>
-        <CloseBtn />
+      <Form onSubmit={ handleSubmit }>
+        <CloseBtn onClick={ testEvent }/>
         {/* 상태에 따라 제목 수정 */}
         <h1>Sign Up</h1>
         

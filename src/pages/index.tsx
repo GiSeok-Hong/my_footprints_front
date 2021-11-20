@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import IndexBtn from '../components/index/indexBtn';
-import IndexModal from '../components/index/indexForm';
+import IndexForm from '../components/index/indexForm';
 // import Header from '../components/common/header';
 
 // 첫 페이지
@@ -25,15 +25,19 @@ const Index = styled.div`
 
 
 const IndexPage = () => {
-  const issign = true;
+  const [formOn, setFormOn]= useState(false);
+  const openForm = () => {
+    console.log(!formOn);
+    setFormOn(!formOn);
+  }
+
 
   return (
     <Index>
-      
       <h1>Hello my memories</h1>
-      <IndexBtn title="Sign In" bottom="120px" />
-      <IndexBtn title="Sign Up" bottom="50px" />
-      {issign?<IndexModal />:<></>}
+      <IndexBtn title="Sign In" bottom="120px" onClick={openForm} />
+      <IndexBtn title="Sign Up" bottom="50px" onClick={openForm} />
+      {formOn ? <IndexForm testEvent={ openForm }/>:<></>}
     </Index>
   );
 };

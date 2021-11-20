@@ -1,12 +1,15 @@
-// 액션 타입 정의
-export const SIGN_IN = 'SIGN_IN';
-export const SIGN_UP = 'SIGN_UP';
+import { SIGN_IN, SIGN_UP } from "./actionTypes"
 
 
 // 액션 생성함수 정의
-export function signIn() {
+export const signIn = () => {
   return {
-    type: SIGN_IN,
-    
+    type: SIGN_IN,  
+  }
+}
+
+export function signUp() {
+  return {
+    type:SIGN_UP,
   }
 }

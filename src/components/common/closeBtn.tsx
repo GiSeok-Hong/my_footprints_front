@@ -10,6 +10,7 @@ const Button = styled.button`
   border:none;
   outline:none;
 
+
   /* 폰트 관련 */
   font-size: 1.5rem;
 
@@ -20,11 +21,16 @@ const Button = styled.button`
   top:20px;
 `;
 
-const CloseBtn = () => {
+interface CloseBtnInterface {
+  // onClick: (e: BaseSyntheticEvent) => void
+  onClick: () => void
+}
+
+const CloseBtn = ({ onClick }:CloseBtnInterface) => {
+
   return (
-    <Button>X</Button>
+    <Button onClick={ onClick }>X</Button>
   );
 };
-
 
 export default CloseBtn;

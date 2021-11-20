@@ -12,15 +12,17 @@ const IndexButton = styled(Button)`
   transform:translate(-50%,-50%);
 `;
 
-type IndexBtnProps = {
-  title: string;
-  bottom: string;
+
+interface IndexBtnInterface {
+  title: string
+  bottom: string
+  onClick: () => void
 }
 
 
-const IndexBtn = ({ title, bottom }: IndexBtnProps) => {
+const IndexBtn = ({ title, bottom, onClick }: IndexBtnInterface) => {
   return (
-    <IndexButton style={{ bottom }}>{ title }</IndexButton>
+    <IndexButton style={{ bottom }} onClick={ onClick }>{ title }</IndexButton>
   );
 };
 
