@@ -22,7 +22,6 @@ const Button = styled.button`
 `;
 
 interface CloseBtnInterface {
-  // onClick: (e: BaseSyntheticEvent) => void
   onClick: () => void
 }
 

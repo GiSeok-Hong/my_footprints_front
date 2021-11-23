@@ -1,15 +1,15 @@
-// import { combineReducers } from "redux";
-// // import { SIGN_IN, SIGN_UP } from "../actions"
+import { combineReducers } from "redux";
+import formTypeReducer from "./formType";
 
-// const signReducer = (state = [], action: { type: any; }) => {
-//   switch (action.type) {
-//     case SIGN_IN:
-//       return [];
-//     case SIGN_UP:
-//       return [];
-//     default:
-//       return state;
-//   }
-// }
+// 루트 리듀서
 
-// export default combineReducers({ signReducer });
+const rootReducer = combineReducers({
+  formTypeReducer
+});
+
+
+// 루트 리듀서 내보내기
+export default rootReducer;
+
+// 루트 리듀서의 타입
+export type RootState = ReturnType<typeof rootReducer>;

@@ -1,11 +1,13 @@
 import React, { BaseSyntheticEvent } from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 // import { Link } from 'react-router-dom';
 import BlackBg from '../common/blackBg';
 import CloseBtn from '../common/closeBtn';
 import ContinueBtn from './continueBtn';
 import IndexInput from './indexInput';
 import ChkInput from './chkInput';
+import { RootState } from '../../redux/reducers';
 
 const Form = styled.form`
   width:50vw;
@@ -39,37 +41,35 @@ const Form = styled.form`
 `
 
 interface IndexFormInterface {
-  testEvent: () => void
+  openForm: () => void
 }
 
 
-const IndexForm = ({ testEvent }:IndexFormInterface) => {
+const IndexForm = ({ openForm }:IndexFormInterface) => {
 
   const handleSubmit = (e:BaseSyntheticEvent) => {
     e.preventDefault();
-    console.log('onSubmit = preventDefault ');
+    console.log('onSubmit = preventDefault');
   }
+
+  
+  const state = useSelector((state:RootState )=> state.formTypeReducer.formType);
+
 
   return (
     <BlackBg>
       <Form onSubmit={ handleSubmit }>
-        <CloseBtn onClick={ testEvent }/>
-        {/* 상태에 따라 제목 수정 */}
-        <h1>Sign Up</h1>
+        <CloseBtn onClick={ openForm }/>
+        <h1> { state }</h1>
         
         <IndexInput title="Email" inputType="email"/>
-        <IndexInput title="Password" inputType="password"/>
-        <IndexInput title="Confirm Password" inputType="password"/>
-        <ChkInput title="agree" content="I agree with TERMS & CONDITIONS" />
-
-        {/* Sign In 에서만 나와야함 */}
-        <span>Forget your password? (Link로 바꿔야함)</span>
-        
+        <IndexInput title="Password" inputType="password" />
+        {state === 'Sign Up' ? <IndexInput title="Confirm Password" inputType="password" /> : <></>}
+        {state === 'Sign Up' ? <ChkInput title="agree" content="I agree with TERMS & CONDITIONS" /> : <></>}
+        {state === 'Sign In' ? <span>Forget your password? (Link로 바꿔야함)</span> : <></>}
         <ContinueBtn />
         <p>---------- Sign In with ----------</p>
-
-        {/* Sign In 에서만 나와야함 */}
-        <p>Don&apos;t have an account? <span style={{fontWeight:'bold', color:'#000'}}>Sign Up</span>(Link로 바꿔야함)</p>
+        {state === 'Sign In' ? <p>Don&apos;t have an account? <span style={{ fontWeight: 'bold', color: '#000' }}>Sign Up</span>(Link로 바꿔야함)</p> : <></>}
       </Form>
     </BlackBg>
   );

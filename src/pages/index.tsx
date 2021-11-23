@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import IndexBtn from '../components/index/indexBtn';
 import IndexForm from '../components/index/indexForm';
-// import Header from '../components/common/header';
+import { signUpAction, signInAction } from '../redux/actions/formAction';
 
 // 첫 페이지
 const Index = styled.div`
@@ -25,21 +26,43 @@ const Index = styled.div`
 
 
 const IndexPage = () => {
-  const [formOn, setFormOn]= useState(false);
+  const [formOn, setFormOn] = useState(false);
+  
   const openForm = () => {
-    console.log(!formOn);
+    console.log('formOn : ',!formOn);
     setFormOn(!formOn);
+  }
+
+  // 리덕스 디스패치
+  const dispatch = useDispatch();
+
+  const signIn = () => {
+    dispatch(signInAction());
+    openForm();
+    console.log("click signIn");
+  }
+
+  const signUp = () => {
+    dispatch(signUpAction());
+    openForm();
+    console.log("click signUp");
   }
 
 
   return (
     <Index>
       <h1>Hello my memories</h1>
-      <IndexBtn title="Sign In" bottom="120px" onClick={openForm} />
-      <IndexBtn title="Sign Up" bottom="50px" onClick={openForm} />
-      {formOn ? <IndexForm testEvent={ openForm }/>:<></>}
+      <IndexBtn title="Sign In" bottom="120px" onClick={signIn} />
+      <IndexBtn title="Sign Up" bottom="50px" onClick={signUp} />
+
+      {formOn ? <IndexForm openForm={openForm} /> : <></>}
+      
     </Index>
   );
 };
+
+
+
+
 
 export default IndexPage;
